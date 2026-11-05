@@ -1,0 +1,260 @@
+/* ==========================================================
+   estilos.css - Actividad 1: DOM
+   Estilo sencillo y limpio para todas las páginas
+   ========================================================== */
+
+:root {
+  --color-primario: #4f46e5;
+  --color-primario-oscuro: #4338ca;
+  --color-fondo: #f3f4f8;
+  --color-tarjeta: #ffffff;
+  --color-texto: #1f2937;
+  --color-suave: #6b7280;
+  --color-borde: #d9dce5;
+  --radio: 10px;
+  --sombra: 0 4px 16px rgba(31, 41, 55, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Fondo de la página */
+html {
+  background: var(--color-fondo);
+}
+
+/* Todo el contenido queda dentro de un cuadro central */
+body {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+}
+
+/* ---------- Títulos y texto ---------- */
+h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--color-primario);
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--color-borde);
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--color-suave);
+  text-align: justify;
+}
+
+code {
+  padding: 0.1rem 0.4rem;
+  font-size: 0.9em;
+  background: #e8eaf6;
+  color: var(--color-primario-oscuro);
+  border-radius: 4px;
+}
+
+/* ---------- Enlaces ---------- */
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Enlace "Volver al inicio" */
+body > a:first-child {
+  display: block;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  background: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+}
+
+body > a:first-child:hover {
+  background: #e8eaf6;
+  text-decoration: none;
+}
+
+/* ---------- Lista de ejercicios (index) ---------- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 0.6rem;
+}
+
+ul li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  background: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-left: 5px solid var(--color-primario);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+ul li a:hover {
+  transform: translateX(4px);
+  border-left-color: var(--color-primario-oscuro);
+  text-decoration: none;
+}
+
+/* ---------- Formularios ---------- */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f5f6fb;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+}
+
+label {
+  flex: 1 1 100%;
+  margin-bottom: -0.45rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input {
+  flex: 1 1 100%;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-texto);
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Campos de resultado (solo lectura) */
+input[readonly] {
+  font-weight: 600;
+  background: #eef0fb;
+  border-style: dashed;
+  cursor: default;
+}
+
+/* ---------- Botones ---------- */
+button {
+  flex: 1 1 auto;
+  padding: 0.65rem 1.2rem;
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-primario);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: var(--color-primario-oscuro);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Tabla (Ejercicio 5) ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  background: var(--color-tarjeta);
+  border: none;
+  border-radius: var(--radio);
+  box-shadow: 0 0 0 1px var(--color-borde);
+}
+
+th,
+td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+thead th {
+  color: #fff;
+  background: var(--color-primario);
+}
+
+tbody tr:nth-child(even) {
+  background: #f7f8fc;
+}
+
+tbody tr:hover {
+  background: #eef0fb;
+}
+
+/* Columna "Valor" alineada a la derecha */
+th:last-child,
+td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Resaltar el total general */
+tbody tr:nth-last-child(2) td {
+  font-weight: 700;
+  color: var(--color-primario-oscuro);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  body {
+    margin: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+
+  button {
+    flex: 1 1 100%;
+  }
+}
