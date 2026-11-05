@@ -31,4 +31,4 @@ function calcularPresupuesto(){
     let txinv = generalt/ninv
     document.getElementById("costo-inv").innerText =txinv.toLocaleString('es-CO')
 
-} costo-inv
+} 
